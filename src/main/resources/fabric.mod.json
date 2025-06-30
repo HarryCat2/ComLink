@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "holograms",
+  "version": "${version}",
+  "name": "ComLink",
+  "description": "A visual mod implenting holograms and audio communications!",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/holograms/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "harry.cat.holograms.client.HologramsDataGenerator"
+    ],
+    "client": [
+      "harry.cat.holograms.client.HologramsClient"
+    ],
+    "main": [
+      "harry.cat.holograms.Holograms"
+    ]
+  },
+  "mixins": [
+    "holograms.mixins.json",
+    {
+      "config": "holograms.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

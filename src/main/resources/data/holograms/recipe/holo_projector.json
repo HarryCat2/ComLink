@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#H",
+    "Yi"
+  ],
+  "key": {
+    "#": {
+      "item": "holograms:projector_lens"
+    },
+    "H": {
+      "item": "holograms:signal_emitter"
+    },
+    "Y": {
+      "item": "holograms:circuit_board"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "holograms:holo_projector",
+    "count": 1
+  }
+}
