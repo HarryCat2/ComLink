@@ -1,5 +1,6 @@
 package harry.cat.holograms;
 
+import harry.cat.holograms.items.ModItemGroups;
 import harry.cat.holograms.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ public class Holograms implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.registerModItems();
+        ModItemGroups.registerItemGroups();
     }
 }
 

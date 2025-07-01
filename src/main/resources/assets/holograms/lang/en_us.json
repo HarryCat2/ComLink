@@ -2,5 +2,7 @@
   "item.holograms.holo_projector": "Jedi Holo Projector",
   "item.holograms.projector_lens": "Projector Lens",
   "item.holograms.signal_emitter": "Signal Emitter",
-  "item.holograms.circuit_board": "Circuit Board"
+  "item.holograms.circuit_board": "Circuit Board",
+
+  "itemgroup.Holograms.holo_projector_items": "ComLink Items"
 }

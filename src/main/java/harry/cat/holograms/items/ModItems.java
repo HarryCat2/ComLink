@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     // MOD ITEMS
-    public static final Item HOLO_PROJECTOR = registerItem("holo_projector", new Item(new Item.Settings().maxCount(1)));
+    //public static final Item HOLO_PROJECTOR = registerItem("holo_projector", new Item(new Item.Settings().maxCount(1)));
 
     // MOD CRAFTING PARTS
     public static final Item PROJECTION_LENS = registerItem("projector_lens", new Item(new Item.Settings().maxCount(8)));
