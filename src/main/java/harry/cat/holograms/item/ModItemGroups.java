@@ -1,7 +1,6 @@
-package harry.cat.holograms.items;
+package harry.cat.holograms.item;
 
 import harry.cat.holograms.Holograms;
-import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

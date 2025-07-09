@@ -1,4 +1,4 @@
-package harry.cat.holograms.items;
+package harry.cat.holograms.item;
 
 
 import harry.cat.holograms.Holograms;
