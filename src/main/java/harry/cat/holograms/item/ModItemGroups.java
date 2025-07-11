@@ -1,6 +1,7 @@
 package harry.cat.holograms.item;
 
 import harry.cat.holograms.Holograms;
+import harry.cat.holograms.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -20,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModItems.CIRCUIT_BOARD);
                         entries.add(ModItems.PROJECTION_LENS);
                         entries.add(ModItems.SIGNAL_EMITTER);
+                        entries.add(ModBlocks.HOLO_TABLE);
                     }).build());
 
     public static void registerItemGroups() {
