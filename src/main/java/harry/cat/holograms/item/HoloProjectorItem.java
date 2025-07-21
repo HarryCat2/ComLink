@@ -1,4 +1,4 @@
-package harry.cat.holograms.item.custom;
+package harry.cat.holograms.item;
 
 import net.minecraft.item.Item;
 

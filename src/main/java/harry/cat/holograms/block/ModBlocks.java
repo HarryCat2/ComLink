@@ -1,7 +1,6 @@
 package harry.cat.holograms.block;
 
 import harry.cat.holograms.Holograms;
-import harry.cat.holograms.block.custom.HoloTableBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -26,7 +25,7 @@ public class ModBlocks {
                 new BlockItem(block, new Item.Settings()));
     }
 
-    public static void registerModBlocks() {
-        Holograms.LOGGER.info("Registering Mod Blocks for " + Holograms.MOD_ID);
+    public static void registerBlocks() {
+        Holograms.LOGGER.info("Registering Blocks for " + Holograms.MOD_ID);
     }
 }

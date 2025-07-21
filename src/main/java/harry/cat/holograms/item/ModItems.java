@@ -23,7 +23,7 @@ public class ModItems {
 
     }
 
-    public static void registerModItems() {
+    public static void registerItems() {
         Holograms.LOGGER.info("Registering Mod Items for " + Holograms.MOD_ID);
     }
 }
