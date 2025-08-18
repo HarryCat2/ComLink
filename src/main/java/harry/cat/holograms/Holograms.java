@@ -5,6 +5,7 @@ import harry.cat.holograms.block.entity.ModBlockEntities;
 import harry.cat.holograms.item.ModItemGroups;
 import harry.cat.holograms.item.ModItems;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +20,9 @@ public class Holograms implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
+    }
+    public static Identifier id(String string){
+        return Identifier.of(MOD_ID, string);
     }
 }
 
