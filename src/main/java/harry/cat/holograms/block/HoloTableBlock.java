@@ -4,14 +4,28 @@ import com.mojang.serialization.MapCodec;
 import harry.cat.holograms.block.entity.HoloTableBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.screen.EnchantmentScreenHandler;
+import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Nameable;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 
 public class HoloTableBlock extends BlockWithEntity implements BlockEntityProvider {
 
-    private static final VoxelShape SHAPE =
-            Block.createCuboidShape(2, 0, 2, 14, 13, 14);
+    protected static final VoxelShape SHAPE =
+            Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 12.0, 16.0);
 
     public static final MapCodec<HoloTableBlock> CODEC = HoloTableBlock.createCodec(HoloTableBlock::new);
 
@@ -19,10 +33,10 @@ public class HoloTableBlock extends BlockWithEntity implements BlockEntityProvid
         super(settings);
     }
 
-//    @Override
-//    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-//        return SHAPE;
-//    }
+    @Override
+    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
 
     @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {
@@ -38,7 +52,6 @@ public class HoloTableBlock extends BlockWithEntity implements BlockEntityProvid
     protected BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
     }
-
 
 }
 

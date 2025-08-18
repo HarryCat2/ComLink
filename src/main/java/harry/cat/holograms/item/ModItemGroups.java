@@ -22,6 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PROJECTION_LENS);
                         entries.add(ModItems.SIGNAL_EMITTER);
                         entries.add(ModBlocks.HOLO_TABLE);
+
                     }).build());
 
     public static void registerItemGroups() {

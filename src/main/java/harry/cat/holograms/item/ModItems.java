@@ -16,6 +16,9 @@ public class ModItems {
     public static final Item SIGNAL_EMITTER = registerItem("signal_emitter", new Item(new Item.Settings().maxCount(8)));
     public static final Item CIRCUIT_BOARD = registerItem("circuit_board", new Item(new Item.Settings().maxCount(8)));
 
+    // Solo Items
+    public static final Item DEATHSTAR_DATAPAD = registerItem("deathstar_datapad", new Item(new Item.Settings().maxCount(1)));
+
 
 
     private static Item registerItem(String name, Item item) {

@@ -15,7 +15,9 @@ public class ModBlockEntities {
 
     private static <T extends BlockEntity> BlockEntityType<T> register(
             String name,
-           BlockEntityType.BlockEntityFactory<? extends T> entityFactory,
+
+           //BlockEntityType.BlockEntityFactory<? extends T> entityFactory,
+            BlockEntityType.BlockEntityFactory<? extends T> entityFactory,
             Block... blocks
     ) {
         Identifier id = Identifier.of(Holograms.MOD_ID, name);
