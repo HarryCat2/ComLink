@@ -60,7 +60,6 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
 
     @Override
     public void render(HoloTableBlockEntity entity, float tickProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos) {
-        //renderLayer.draw(buff.end());
         MinecraftClient client = MinecraftClient.getInstance();
 
 
@@ -85,17 +84,7 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
             entity.getWorld(),
             entity.getWorld().random.nextInt()
         );
-        /*MinecraftClient.getInstance().getItemRenderer().renderItem(
-                stack,
-                ModelTransformationMode.GROUND,
-                light,
-                overlay,
-                matrices,
-                vertexConsumers,
-                blockEntity.getWorld(),
-                0
-        );*/
-        // Mandatory call after GL calls
+
         matrices.pop();
     }
 }

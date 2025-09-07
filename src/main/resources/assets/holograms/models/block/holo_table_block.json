@@ -4,7 +4,7 @@
 	"texture_size": [256, 256],
 	"parent": "block/cube_all",
 	"textures": {
-		"2": "holograms:block/holo_table_block",
+		"2": "holograms:block/holo_table_block",cutie c
 		"particle": "holo_table_block"
 	},
 	"elements": [
