@@ -42,18 +42,6 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
                     .withDepthTestFunction(DepthTestFunction.LEQUAL_DEPTH_TEST)
                     .build()
     );
-    Tessellator tess = Tessellator.getInstance();
-    BufferBuilder buff = tess.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
-
-
-
-    public static final RenderLayer renderLayer = RenderLayer.of(
-            "debug_lines",
-            1526,
-            DEBUG_LINES,
-            RenderLayer.MultiPhaseParameters.builder().lineWidth(new RenderPhase.LineWidth(OptionalDouble.of(1))).build(false)
-    );
-
 
 
 

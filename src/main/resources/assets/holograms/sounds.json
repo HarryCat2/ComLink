@@ -1,0 +1,20 @@
+{
+  "comlink_cw_ring_tone": {
+    "subtitle": "sound.comlink.ring-tone",
+    "sounds": [
+      "holograms:comlink_cw_ring_tone"
+    ]
+  },
+  "ot_begin_transmission": {
+    "subtitle": "sound.comlink.OT-begin-transmission",
+    "sounds": [
+      "holograms:ot_begin_transmission"
+    ]
+  },
+  "ot_holocom_loop": {
+    "subtitle": "sound.comlink.OT-holocom-loop",
+    "sounds": [
+      "holograms:ot_holocom_loop"
+    ]
+  }
+}
