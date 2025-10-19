@@ -2,6 +2,7 @@ package harry.cat.holograms.item;
 
 
 import harry.cat.holograms.Holograms;
+import harry.cat.holograms.components.ModComponents;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,6 +15,17 @@ import java.util.function.Function;
 public class ModItems {
     // MOD ITEMS
     //public static final Item HOLO_PROJECTOR = registerItem("holo_projector", new Item(new Item.Settings().maxCount(1)));
+    public static final Item HOLO_PROJECTOR = registerItem(
+            Holograms.id("holo_projector"),
+            HoloProjectorItem::new,
+            new Item.Settings().maxCount(1)
+                    .component(ModComponents.OWNER_UUID_COMPONENT, null)
+                    .component(ModComponents.OWNER_NAME_COMPONENT, null)
+                    .component(ModComponents.DEVICE_ID, null)
+                    .component(ModComponents.CHANNEL_NUMBER, null)
+
+    );
+
 
     // MOD CRAFTING PARTS
     public static final Item PROJECTION_LENS = registerSimpleItem("projector_lens", new Item.Settings().maxCount(8));
@@ -22,8 +34,6 @@ public class ModItems {
 
     // Solo Items
     public static final Item DEATHSTAR_DATAPAD = registerSimpleItem("deathstar_datapad", new Item.Settings().maxCount(1));
-
-
 
     public static Item registerSimpleItem(String key, Item.Settings settings){
         return registerItem(Holograms.id(key), Item::new, settings);
@@ -37,4 +47,5 @@ public class ModItems {
     public static void registerItems() {
         Holograms.LOGGER.info("Registering Mod Items for " + Holograms.MOD_ID);
     }
+
 }

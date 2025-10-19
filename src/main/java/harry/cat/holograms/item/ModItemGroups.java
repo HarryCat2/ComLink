@@ -22,6 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PROJECTION_LENS);
                         entries.add(ModItems.SIGNAL_EMITTER);
                         entries.add(ModItems.DEATHSTAR_DATAPAD);
+                        entries.add(ModItems.HOLO_PROJECTOR);
                         entries.add(ModBlocks.HOLO_TABLE);
 
 

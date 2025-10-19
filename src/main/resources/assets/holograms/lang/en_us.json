@@ -1,5 +1,6 @@
 {
   "item.holograms.holo_projector": "Jedi Holo Projector",
+  "item.holograms.holo_projector.info": "Owner UUID: %1$s times",
   "item.holograms.projector_lens": "Projector Lens",
   "item.holograms.signal_emitter": "Signal Emitter",
   "item.holograms.circuit_board": "Circuit Board",

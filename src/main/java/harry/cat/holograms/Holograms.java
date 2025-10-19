@@ -2,6 +2,8 @@ package harry.cat.holograms;
 
 import harry.cat.holograms.block.ModBlocks;
 import harry.cat.holograms.block.entity.ModBlockEntities;
+import harry.cat.holograms.components.ModComponents;
+import harry.cat.holograms.item.HoloProjectorItem;
 import harry.cat.holograms.item.ModItemGroups;
 import harry.cat.holograms.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -20,6 +22,8 @@ public class Holograms implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModBlocks.registerBlocks();
         ModBlockEntities.registerBlockEntities();
+        ModComponents.initialize();
+
     }
     public static Identifier id(String string){
         return Identifier.of(MOD_ID, string);
