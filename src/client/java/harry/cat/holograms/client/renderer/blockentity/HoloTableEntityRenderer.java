@@ -1,27 +1,16 @@
 package harry.cat.holograms.client.renderer.blockentity;
-
-import com.mojang.blaze3d.pipeline.RenderPipeline;
-import com.mojang.blaze3d.platform.DepthTestFunction;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.VertexFormat;
 import harry.cat.holograms.block.entity.HoloTableBlockEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
-
-import java.util.OptionalDouble;
-
 
 
 
@@ -32,15 +21,13 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
 
     public HoloTableEntityRenderer(BlockEntityRendererFactory.Context ctx) {}
 
-
-
-
     @Override
     public void render(HoloTableBlockEntity entity, float tickProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos) {
         MinecraftClient client = MinecraftClient.getInstance();
         matrices.push();
         float time = (client.world.getTime() % 60) / 60f;
         float flicker = 0.8f + (float)Math.sin(time * 40.0) * 0.2f;
+
         client.getEntityRenderDispatcher().render(
                 client.player,
                 0.5,
