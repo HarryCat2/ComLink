@@ -33,6 +33,7 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
         MinecraftClient client = MinecraftClient.getInstance();
         matrices.push();
 
+
         client.getEntityRenderDispatcher().render(
                 client.player,
                 0.5,
@@ -44,21 +45,15 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
                 light
         );
 
-        Identifier texture = Identifier.of("holograms:textures/entity/hologram_base.png");
+        //Identifier texture = Identifier.of("holograms:textures/entity/hologram_base.png");
 
-        VertexConsumer consumer = vertexConsumers.getBuffer(
-                HOLOGRAM_TRANSLUCENT_LAYER.apply(texture, false)
-        );
-
-
-
+        //VertexConsumer consumer = vertexConsumers.getBuffer(
+        //        HOLOGRAM_TRANSLUCENT_LAYER.apply(texture, false)
+        //);
         //model.render(matrices, consumer, light, overlay, 0.2f, 0.8f, 1f, 0.6f);
 
-
-        //RenderSystem.setShaderColor(0.2f, 0.8f, 1.0f, 0.5f);
-
-
-        //client.getEntityRenderDispatcher().setRenderShadows(false);
+        client.getEntityRenderDispatcher().setRenderShadows(false);
+        RenderSystem.setShaderColor(0.2f, 0.8f, 1.0f, 0.5f);
 
         matrices.pop();
         /*matrices.push();

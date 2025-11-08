@@ -17,9 +17,7 @@ import java.util.function.Function;
 public class ModBlocks {
 
 
-    public static final HoloTableBlock HOLO_TABLE = block(Holograms.id("holo_table"), HoloTableBlock::new, AbstractBlock.Settings.create().nonOpaque());
-
-    private static Block registerBlock(String name, Block block) {
+    private static Block register(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Holograms.MOD_ID, name), block);
     }
@@ -38,4 +36,12 @@ public class ModBlocks {
     public static void registerBlocks() {
         Holograms.LOGGER.info("Registering Blocks for " + Holograms.MOD_ID);
     }
+
+    public static final HoloTableBlock HOLO_TABLE =
+            block(Holograms.id("holo_table"),
+                    HoloTableBlock::new,
+                    AbstractBlock.Settings.create()
+                            .nonOpaque()
+            );
 }
+

@@ -41,5 +41,11 @@ public class ModComponents {
             Identifier.of(Holograms.MOD_ID, "channel_number"),
             ComponentType.<String>builder().codec(Codec.STRING).build()
     );
+    // Idle Hologram value, Value correlates to object to render idly, for example 0 = No Idle Hologram, 1 = Item, 2 = Block, 3 = Entity, 4 = DeathStar
+    public static final ComponentType<String> IDLE_HOLOGRAM = Registry.register(
+            Registries.DATA_COMPONENT_TYPE,
+            Identifier.of(Holograms.MOD_ID, "idle_hologram"),
+            ComponentType.<String>builder().codec(Codec.STRING).build()
+    );
 
 }

@@ -33,7 +33,14 @@ public class ModItems {
     public static final Item CIRCUIT_BOARD = registerSimpleItem("circuit_board", new Item.Settings().maxCount(8));
 
     // Solo Items
-    public static final Item DEATHSTAR_DATAPAD = registerSimpleItem("deathstar_datapad", new Item.Settings().maxCount(1));
+    public static final Item DEATHSTAR_DATAPAD = registerItem(
+            Holograms.id("deathstar_datapad"),
+            DataPadItem::new,
+            new Item.Settings().maxCount(1)
+                    .component(ModComponents.IDLE_HOLOGRAM, null)
+
+
+    );
 
     public static Item registerSimpleItem(String key, Item.Settings settings){
         return registerItem(Holograms.id(key), Item::new, settings);

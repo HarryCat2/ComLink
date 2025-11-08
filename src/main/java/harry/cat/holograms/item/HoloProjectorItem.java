@@ -1,5 +1,6 @@
 package harry.cat.holograms.item;
 import harry.cat.holograms.components.ModComponents;
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,9 +29,11 @@ public class HoloProjectorItem extends Item {
 
                 user.sendMessage(Text.literal("Linked to: " + user.getName().getString()), true);
 
+
             } // insert else statement here for full function of device
 
             return ActionResult.SUCCESS;
+
 
         }
         return ActionResult.SUCCESS;

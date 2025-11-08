@@ -4,6 +4,9 @@
   "item.holograms.projector_lens": "Projector Lens",
   "item.holograms.signal_emitter": "Signal Emitter",
   "item.holograms.circuit_board": "Circuit Board",
+  "item.holograms.deathstar_datapad": "Datapad",
 
-  "itemgroup.Holograms.holo_projector_items": "ComLink Items"
+  "itemgroup.Holograms.holo_projector_items": "ComLink Items",
+
+  "effect.holograms.carbonite_frozen": "Carbonite Frozen"
 }
