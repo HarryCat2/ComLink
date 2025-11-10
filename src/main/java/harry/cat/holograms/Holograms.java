@@ -1,5 +1,6 @@
 package harry.cat.holograms;
 
+
 import harry.cat.holograms.block.ModBlocks;
 import harry.cat.holograms.block.entity.ModBlockEntities;
 import harry.cat.holograms.components.ModComponents;
@@ -25,7 +26,6 @@ public class Holograms implements ModInitializer {
     public static final RegistryEntry<StatusEffect> CARBONITE_BLINDNESS =
             Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Holograms.MOD_ID, "carbonite_blindness"), new CarboniteBlindness());
 
-
     @Override
     public void onInitialize() {
         ModItems.registerItems();
@@ -38,6 +38,8 @@ public class Holograms implements ModInitializer {
     public static Identifier id(String string){
         return Identifier.of(MOD_ID, string);
     }
+
+
 }
 
 

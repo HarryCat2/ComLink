@@ -1,38 +1,47 @@
 package harry.cat.holograms.client.renderer.blockentity;
+import com.mojang.blaze3d.pipeline.BlendFunction;
+import com.mojang.blaze3d.pipeline.RenderPipeline;
 import com.mojang.blaze3d.systems.RenderSystem;
 import harry.cat.holograms.block.entity.HoloTableBlockEntity;
-import harry.cat.holograms.client.renderer.HologramLayerRenderer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.renderer.v1.material.MaterialFinder;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
+import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 
-import static harry.cat.holograms.client.renderer.HologramLayerRenderer.HOLOGRAM_TRANSLUCENT_LAYER;
+import static harry.cat.holograms.Holograms.MOD_ID;
+import static net.minecraft.client.gl.RenderPipelines.ENTITY_SNIPPET;
 
 
 @Environment(EnvType.CLIENT)
 
 public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlockEntity> {
-    private static final ItemStack stack = new ItemStack(Items.JUKEBOX);
-
-
     public HoloTableEntityRenderer(BlockEntityRendererFactory.Context ctx) {}
 
-    @Override
-    public void render(HoloTableBlockEntity entity, float tickProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos) {
-        MinecraftClient client = MinecraftClient.getInstance();
-        matrices.push();
+    //HOLOGRAM RENDER LAYER
+    public static final RenderPipeline HOLOGRAM_ENTITY_TRANSLUCENT =
+            RenderPipeline.builder(ENTITY_SNIPPET)
+                    .withLocation(Identifier.of(MOD_ID, "pipeline/hologram_entity_translucent"))
+                    .withVertexShader(Identifier.of(MOD_ID, "core/custom"))
+                    .withFragmentShader(Identifier.of(MOD_ID, "core/custom"))
+                    .withBlend(BlendFunction.TRANSLUCENT)
+                    .withCull(false)
+                    .withShaderDefine("ALPHA_CUTOUT", 0.1F)
+                    .withSampler("Sampler1")
+                    .build();
 
+    @Override
+    public void render(HoloTableBlockEntity entity, float tickProgress, MatrixStack matrices,
+                       VertexConsumerProvider vertexConsumers, int light, int overlay, Vec3d cameraPos) {
+        MinecraftClient client = MinecraftClient.getInstance();
 
         client.getEntityRenderDispatcher().render(
                 client.player,
@@ -45,17 +54,14 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
                 light
         );
 
-        //Identifier texture = Identifier.of("holograms:textures/entity/hologram_base.png");
+    }
 
-        //VertexConsumer consumer = vertexConsumers.getBuffer(
-        //        HOLOGRAM_TRANSLUCENT_LAYER.apply(texture, false)
-        //);
-        //model.render(matrices, consumer, light, overlay, 0.2f, 0.8f, 1f, 0.6f);
+}
 
-        client.getEntityRenderDispatcher().setRenderShadows(false);
-        RenderSystem.setShaderColor(0.2f, 0.8f, 1.0f, 0.5f);
 
-        matrices.pop();
+
+
+
         /*matrices.push();
 
         //RenderSystem.setShaderTexture(0, "textures/entity/hologram_base.png");
@@ -85,5 +91,3 @@ public class HoloTableEntityRenderer implements BlockEntityRenderer<HoloTableBlo
         );
 
         matrices.pop();*/
-    }
-}

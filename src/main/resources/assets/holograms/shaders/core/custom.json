@@ -1,0 +1,22 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "srcalpha",
+    "dstrgb": "1-srcalpha"
+  },
+  "vertex": "custom_shader",
+  "fragment": "custom_shader",
+  "attributes": [ "Position", "Color", "UV0", "UV1", "UV2", "Normal" ],
+  "samplers": [
+    { "name": "Sampler1" },
+    { "name": "Sampler2" }
+  ],
+  "uniforms": [
+    { "name": "ModelViewMat", "type": "matrix4x4" },
+    { "name": "ProjMat", "type": "matrix4x4" },
+    { "name": "TextureMat", "type": "matrix4x4" },
+    { "name": "FogShape", "type": "int" },
+    { "name": "Light0_Direction", "type": "float3" },
+    { "name": "Light1_Direction", "type": "float3" }
+  ]
+}
